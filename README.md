@@ -48,7 +48,37 @@ O objetivo é explorar o dataset de preços de casas nos EUA e aplicar técnicas
 - Resultado consistente com a análise de resíduos da regressão linear
   
 ### 5. Métricas de Avaliação e Comparação
-[INSERIR AQUI O QUE FALTA NA PARTE DO DANTON]
+
+Consolidação de todos os modelos em um só lugar, reavaliados sobre o mesmo
+dataset processado e o mesmo split de treino/teste (random_state=42), para
+garantir uma comparação justa entre eles.
+
+**Glossário das métricas**
+* Regressão: RMSE, MAE e R²
+* Classificação: Acurácia, Precisão, Recall, F1 e ROC-AUC
+
+**Comparação dos modelos de Regressão**
+* Seis modelos avaliados: Regressão Linear, Ridge, Lasso, Árvore de Decisão,
+  Random Forest e Gradient Boosting
+* Regressão Linear explica ~81% da variação do preço (R² ≈ 0.81)
+* Gradient Boosting foi o melhor (R² ≈ 0.91, erro médio de ~US$ 16 mil), por
+  captar relações não lineares
+* Gráficos comparativos (R², RMSE, MAE) e gráfico Previsto × Real do melhor modelo
+
+**Comparação dos modelos de Classificação**
+* Cinco classificadores avaliados: Regressão Logística, KNN, Árvore de Decisão,
+  Random Forest e Gradient Boosting
+* Todos acima de 89% de acurácia, com F1 ≈ 0.92 e ROC-AUC ≈ 0.98 no melhor caso
+* Curvas ROC de todos os modelos e matriz de confusão do melhor classificador
+
+**Comparação geral: supervisionado × não supervisionado**
+* Tabela comparando objetivo, forma de avaliação e resultados de cada abordagem
+* O não supervisionado descobriu a estrutura do mercado e o supervisionado
+  confirmou e quantificou essa estrutura prevendo o preço
+
+**Conclusão**
+* Trade-off entre interpretabilidade (modelos lineares) e precisão (modelos de árvore)
+* Recomendação de uso de cada modelo e limitações do projeto
  
 ## Tecnologias utilizadas
  
